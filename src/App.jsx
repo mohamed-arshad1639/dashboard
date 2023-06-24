@@ -1,19 +1,19 @@
-import React from 'react'
+import { AddBlog } from "./components/Addblog";
+import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import { BrowserRouter, Route, Routes, Switch} from 'react-router-dom';
 
-import Card from 'react-bootstrap/Card';
-import { Route, Routes } from "react-router-dom"
-import Home from './Home';
-import Form from './Form';
-export default function App() {
+function App() {
   return (
 
-    <div>
+    <><Header /><Routes>
+      <Route path="/" element={<Dashboard />}></Route>
+      <Route path="/addblog" element={<AddBlog />}></Route>
 
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/form" element={<Form/>} />
-  </Routes>
-    </div>
-  )
+    </Routes></>
+
+
+  );
 }
-        
+
+export default App;
